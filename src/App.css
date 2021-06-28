@@ -1,38 +1,103 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+  --nav-height: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App { 
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background: rgb(12,12,69);
+  background: linear-gradient(90deg, rgba(12,12,69,1) 0%, rgba(12,12,69,1) 52%, rgba(12,12,69,1) 100%);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  width: 100%;
+  height: var(--nav-height);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-list {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list li:not(:first-child) {
+  margin-left: 15%;
+  text-align: center;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.content-container {
+  height: 100%;
+  color: white;
+  margin-top: 10%;
+}
+
+.background {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #fff;
+}
+
+.hamburger {
+  z-index: 1000;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.nav-list-responsive {
+  z-index: 1000;
+  width: 300px;
+  position: absolute;
+  top: 120px;
   flex-direction: column;
+}
+
+.nav-list-responsive li {
+  margin-top: 10%;
+}
+.nav-list-responsive a {
+  color: black;
+  text-decoration: none;
+  margin-top: 15%;
+}
+
+.users-wrap {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-box {
+  margin: 20px;
 }
